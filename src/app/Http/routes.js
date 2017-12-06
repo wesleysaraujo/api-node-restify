@@ -1,22 +1,6 @@
-
 const routes = (server) => {
   server.get('/categorias', (req, res, next) => {
-    res.send(
-      [
-        {
-          id: 1,
-          name: 'Bermudas'
-        },
-        {
-          id: 2,
-          name: 'Calças'
-        },
-        {
-          id: 3,
-          name: 'Camisetas'
-        }
-      ]
-    )
+    res.send('Olá mundo')
     next()
   })
 
