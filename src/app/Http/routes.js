@@ -1,24 +1,11 @@
-const routes = (server) => {
-  server.get('/categorias', (req, res, next) => {
-    res.send('Olá mundo')
-    next()
-  })
+const CategoriesController = require('./Controllers/CategoriesController')
 
-  server.post('categorias', (req, res, next) => {
-    const { name } = req.params
+const routes = (ctx) => {
+  const Route = ctx.server
 
-    res.send(name)
+  CategoriesController(ctx)
 
-    next()
-  })
-
-  server.put('/categorias', (req, res, next) => {
-    res.send()
-
-    next()
-  })
-
-  server.get('/', (req, res, next) => {
+  Route.get('/', (req, res, next) => {
     res.send('Hello meu mundo negro com sol amarelo sem vida...')
     next()
   })

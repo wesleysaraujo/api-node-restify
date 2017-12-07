@@ -1,6 +1,7 @@
 const server = require('./server')
 const config = require('./server/config')
 const mongodb = require('mongodb').MongoClient
+const routes = require('./app/Http/routes')
 
 server.listen(config.port, () => {
   mongodb.connect(config.db.uri, (err, db) => {
@@ -16,6 +17,6 @@ server.listen(config.port, () => {
       config.env
     )
 
-    require('./app/Http/routes')({ db, server })
+    routes({ db, server })
   })
 })
